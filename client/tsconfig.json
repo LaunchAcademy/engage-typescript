@@ -5,11 +5,7 @@
     "jsx": "react",
     "lib": ["dom", "DOM.Iterable", "esnext"],
     "outDir": "dist",
-    // "rootDir": "src",
     "skipLibCheck": true,
-    // "strict": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
     "target": "es5",
     "types": ["jest", "react"]
   },
