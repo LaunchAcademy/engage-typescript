@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
 
@@ -10,8 +10,13 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
-const App = () => {
-  const [currentUser, setCurrentUser] = useState(undefined);
+interface User {
+  id: number;
+  email: string;
+}
+
+const App: FC = () => {
+  const [currentUser, setCurrentUser] = useState<User | null | undefined>(undefined);
   const fetchCurrentUser = async () => {
     try {
       const user = await getCurrentUser();
